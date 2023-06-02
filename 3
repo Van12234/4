@@ -1,0 +1,14 @@
+int internal(int& m, const int a, const int b)
+{
+  m += b;
+  return (m % a == 0) ? m : internal(m, a, b);
+}
+ 
+int LCM(const int a, const int b)
+{
+  int multiple = 0;  
+  int max = std::max(a, b);
+  int min = std::min(a, b);
+  
+  return internal(multiple, min, max);
+}
